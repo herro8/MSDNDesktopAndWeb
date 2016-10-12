@@ -1,0 +1,119 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDNWeb", "Joanes.Ready2Go.Mvc\MSDNWeb.csproj", "{C79B9A64-9B87-4D9D-9970-3C27B3794A30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32D87247-BE99-4CC5-8158-CC98BB2220FC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDNIniter", "MSDNIniter\MSDNIniter.csproj", "{B025DC1E-363D-4532-8F46-E660EF49671F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{D6E7BD62-7E61-45B0-9E46-366D179E8CC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assembly", "Assembly", "{FD8B0760-8EEC-4FCE-9BBC-7130ADB99635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportAgentRecentActivity", "SupportAgentRecentActivity\SupportAgentRecentActivity.csproj", "{C7939DAF-3861-496C-BBC1-7425E34531ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDNDailyReplyAgent", "MSDNDailyReplyAgent\MSDNDailyReplyAgent.csproj", "{18D00D88-B85D-451B-AD6A-A977FE06D149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDNSubscription", "MSDNSubscription\MSDNSubscription.csproj", "{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportAssembly", "SupportAssembly\SupportAssembly.csproj", "{A2961A16-0AD4-4805-AB68-5FDF8110759F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIFXSubscription", "UIFXSubscription\UIFXSubscription.csproj", "{6151C089-61AB-4BEF-A722-58341A6209A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBGalleryForMSDNANDSO", "DBGalleryForMSDNANDSO\DBGalleryForMSDNANDSO.csproj", "{CD10E96C-9DFC-4888-8E14-4C92FFD851DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C79B9A64-9B87-4D9D-9970-3C27B3794A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79B9A64-9B87-4D9D-9970-3C27B3794A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79B9A64-9B87-4D9D-9970-3C27B3794A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79B9A64-9B87-4D9D-9970-3C27B3794A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B025DC1E-363D-4532-8F46-E660EF49671F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B025DC1E-363D-4532-8F46-E660EF49671F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B025DC1E-363D-4532-8F46-E660EF49671F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B025DC1E-363D-4532-8F46-E660EF49671F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7939DAF-3861-496C-BBC1-7425E34531ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7939DAF-3861-496C-BBC1-7425E34531ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7939DAF-3861-496C-BBC1-7425E34531ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7939DAF-3861-496C-BBC1-7425E34531ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D00D88-B85D-451B-AD6A-A977FE06D149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D00D88-B85D-451B-AD6A-A977FE06D149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D00D88-B85D-451B-AD6A-A977FE06D149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D00D88-B85D-451B-AD6A-A977FE06D149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2961A16-0AD4-4805-AB68-5FDF8110759F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2961A16-0AD4-4805-AB68-5FDF8110759F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2961A16-0AD4-4805-AB68-5FDF8110759F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2961A16-0AD4-4805-AB68-5FDF8110759F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6151C089-61AB-4BEF-A722-58341A6209A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6151C089-61AB-4BEF-A722-58341A6209A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6151C089-61AB-4BEF-A722-58341A6209A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6151C089-61AB-4BEF-A722-58341A6209A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD10E96C-9DFC-4888-8E14-4C92FFD851DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD10E96C-9DFC-4888-8E14-4C92FFD851DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD10E96C-9DFC-4888-8E14-4C92FFD851DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD10E96C-9DFC-4888-8E14-4C92FFD851DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B025DC1E-363D-4532-8F46-E660EF49671F} = {D6E7BD62-7E61-45B0-9E46-366D179E8CC7}
+		{C7939DAF-3861-496C-BBC1-7425E34531ED} = {D6E7BD62-7E61-45B0-9E46-366D179E8CC7}
+		{18D00D88-B85D-451B-AD6A-A977FE06D149} = {D6E7BD62-7E61-45B0-9E46-366D179E8CC7}
+		{F0362192-7018-4C3C-8C6A-9BCBC6B5DD48} = {FD8B0760-8EEC-4FCE-9BBC-7130ADB99635}
+		{A2961A16-0AD4-4805-AB68-5FDF8110759F} = {FD8B0760-8EEC-4FCE-9BBC-7130ADB99635}
+		{6151C089-61AB-4BEF-A722-58341A6209A6} = {FD8B0760-8EEC-4FCE-9BBC-7130ADB99635}
+		{CD10E96C-9DFC-4888-8E14-4C92FFD851DD} = {FD8B0760-8EEC-4FCE-9BBC-7130ADB99635}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://herro.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Joanes.Ready2Go.Mvc\\MSDNWeb.csproj
+		SccProjectName1 = Joanes.Ready2Go.Mvc
+		SccLocalPath1 = Joanes.Ready2Go.Mvc
+		SccProjectUniqueName2 = MSDNIniter\\MSDNIniter.csproj
+		SccProjectTopLevelParentUniqueName2 = MSDNPortal.sln
+		SccProjectName2 = MSDNIniter
+		SccLocalPath2 = MSDNIniter
+		SccProjectUniqueName3 = SupportAgentRecentActivity\\SupportAgentRecentActivity.csproj
+		SccProjectTopLevelParentUniqueName3 = MSDNPortal.sln
+		SccProjectName3 = SupportAgentRecentActivity
+		SccLocalPath3 = SupportAgentRecentActivity
+		SccProjectUniqueName4 = MSDNDailyReplyAgent\\MSDNDailyReplyAgent.csproj
+		SccProjectTopLevelParentUniqueName4 = MSDNPortal.sln
+		SccProjectName4 = MSDNDailyReplyAgent
+		SccLocalPath4 = MSDNDailyReplyAgent
+		SccProjectUniqueName5 = MSDNSubscription\\MSDNSubscription.csproj
+		SccProjectTopLevelParentUniqueName5 = MSDNPortal.sln
+		SccProjectName5 = MSDNSubscription
+		SccLocalPath5 = MSDNSubscription
+		SccProjectUniqueName6 = SupportAssembly\\SupportAssembly.csproj
+		SccProjectTopLevelParentUniqueName6 = MSDNPortal.sln
+		SccProjectName6 = SupportAssembly
+		SccLocalPath6 = SupportAssembly
+		SccProjectUniqueName7 = UIFXSubscription\\UIFXSubscription.csproj
+		SccProjectTopLevelParentUniqueName7 = MSDNPortal.sln
+		SccProjectName7 = UIFXSubscription
+		SccLocalPath7 = UIFXSubscription
+		SccProjectUniqueName8 = DBGalleryForMSDNANDSO\\DBGalleryForMSDNANDSO.csproj
+		SccProjectTopLevelParentUniqueName8 = MSDNPortal.sln
+		SccProjectName8 = DBGalleryForMSDNANDSO
+		SccLocalPath8 = DBGalleryForMSDNANDSO
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,88 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    ViewBag.Title = "Post Detail Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var activity = ViewBag.Activity as Ahead.Common.ViewModeForumActivityDetail[];
+    var count = (int)ViewBag.Count;
+}
+
+
+
+<div class="container-fluid">
+
+    @if (count == 0)
+    {
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-file"></i>
+                        </span>
+                        <h5>Recent Posts</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <ul class="recent-posts"></ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-file"></i>
+                        </span>
+                        <h5>Recent Posts</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <ul class="recent-posts">
+
+
+                            @foreach (var act in activity)
+                                {
+                                <li>
+                                    <div> </div>
+                                    <div class="article-post">
+                                        <div class="fr"><a href="#" class="btn btn-primary btn-mini" style="background-color:green;">Set Reviewed</a> <a href="#" class="btn btn-success btn-mini" style="background-color:red";>Set Failed</a> </div>
+                                        @if ((act.SubmitTime - DateTime.Now).Days == 0)
+                                        {
+                                            <span class="user-info"> By: @act.Alias /<span style="background-color:lightcoral"> Date: @act.SubmitTime </span>   </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="user-info"> By: @act.Alias /Date: @act.SubmitTime </span>
+                                        }
+
+
+                                       
+
+                                        @if (act.IsReply)
+                                        {
+                                            <p ><span style="background-color: lightblue;">@Html.Raw(act.Comment)</span></p>
+                                        }
+                                        else
+                                        {
+                                            <p style="background-color:azure;">@Html.Raw(act.Comment)</p>
+                                        }
+
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

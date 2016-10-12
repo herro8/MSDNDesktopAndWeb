@@ -1,0 +1,144 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var supportagent = ViewBag.SupportAgent as Ahead.Data.SupportAgent;
+    var date = (string)ViewBag.StartDate;
+
+    var activitys = ViewBag.Activity as Ahead.Data.SupportAgentScenario[];
+
+}
+
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon"><i class="icon-repeat"></i></span>
+                    <h5>Recent Activity</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <ul class="activity-list">
+
+
+                        @foreach (var act in activitys)
+                        {
+                            <li>
+                                <a href="#">
+                                    <i class="icon-user"></i>
+                                    <strong>@supportagent.Alias</strong> &nbsp;ask leave (@act.OperationType) from  <strong>  @act.StartTime</strong> to <strong>  @act.EndTime</strong>  <span> log time: @act.LogTime</span>
+                                </a>
+                            </li>
+                        }
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-align-justify"></i>
+                        </span>
+                        <h5>Form Elements</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form action="/Leave/New" method="post" class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">Chinese Name :</label>
+                                <div class="controls">
+                                <input type="text" class="span3" disabled="disabled"  value="@supportagent.ChineseName"/>
+                                <input type="hidden" name="supportagentalias"  value="@supportagent.Alias"/>
+                                 </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">OverTime: </label>
+                                <div class="controls">
+                                    <input type="text" class="span6" disabled="disabled"  value="@supportagent.InitOverTime"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Annual: </label>
+                                <div class="controls">
+                                    <input type="text" class="span6" disabled="disabled" value="@supportagent.InitAnnual"  /> 
+                                </div>
+                            </div>
+
+
+                            <script type="text/javascript">
+                                function changeit()
+                                {
+                                    document.getElementById("txtaskleave").value = document.getElementById("askleavetype").value;
+                                }
+                            </script>
+
+
+                            <div class="control-group">
+                                <label class="control-label">Ask For: </label>
+                                <div class="controls">
+                                    <input type="text" name="txttype" id="txtaskleave" class="span6" placeholder="choose or fill the type" />
+                                <select id="askleavetype" onchange="changeit();">
+                                    <option>What type?</option>
+                                    <option>OverTime</option>
+                                    <option>Annual</option>
+                                    <option>Personal Leave</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Date From:</label>
+                                <div class="controls">
+                                    <input name="startdate" type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy"  class="datepicker" value="@date" /> 
+                                    &nbsp; <input name="starthour" type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" class="datepicker" value="9" />
+                                    &nbsp; <select name="startminutes">
+                                        <option>00</option>
+                                        <option>30</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Date To:</label>
+                                <div class="controls">
+                                    <input name="enddate" type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy"  class="datepicker"  value="@date"/> 
+                                     &nbsp; <input name="endhour" type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" class="datepicker" value="18" />
+                                    &nbsp; <select name="endminutes">
+                                        <option>00</option>
+                                        <option>30</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Interval Time: </label>
+                                <div class="controls">
+                                    <input name="txtinterval" type="text" class="span6" placeholder="Type interval time" />
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Reason: </label>
+                                <div class="controls">
+                                    <input name="txtreason" type="text" class="span6" placeholder="Type reason" /> 
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

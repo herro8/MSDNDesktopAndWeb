@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MSDNInernalDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AskLeaves">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar(max)" />
+          <Property Name="OperationType" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="UsedTime" Type="float" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ForumActivities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar(max)" />
+          <Property Name="OperationType" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="PublishTime" Type="datetime" Nullable="false" />
+          <Property Name="LogTime" Type="nvarchar(max)" />
+          <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ReviewItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SupportAgentInProducts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgentID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupportAgentInTeams">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgentID" Type="int" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MSDNInernalDataBase.dbo.SupportAgents”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SupportAgents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Chinese" Type="nvarchar" MaxLength="255" />
+          <Property Name="OnBoard Date" Type="datetime" />
+          <Property Name="ForHCTracking" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub-Func" Type="nvarchar" MaxLength="255" />
+          <Property Name="Project" Type="nvarchar" MaxLength="255" />
+          <Property Name="Team" Type="nvarchar" MaxLength="255" />
+          <Property Name="GoLive Date" Type="datetime" />
+          <Property Name="Phone Number" Type="float" />
+          <Property Name="DeliverMSDN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeliverSO" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeliverASPNET" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SupportAgentScenarios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgentID" Type="int" Nullable="false" />
+          <Property Name="ScenarioType" Type="nvarchar(max)" />
+          <Property Name="OperationType" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="RelatedValue" Type="float" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="MSDNInernalDataBaseModelStoreContainer">
+          <EntitySet Name="AskLeaves" EntityType="Self.AskLeaves" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForumActivities" EntityType="Self.ForumActivities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReviewItems" EntityType="Self.ReviewItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupportAgentInProducts" EntityType="Self.SupportAgentInProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupportAgentInTeams" EntityType="Self.SupportAgentInTeams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupportAgentScenarios" EntityType="Self.SupportAgentScenarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupportAgents" EntityType="Self.SupportAgents" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SupportAgents].[ID] AS [ID], 
+    [SupportAgents].[Alias] AS [Alias], 
+    [SupportAgents].[Name] AS [Name], 
+    [SupportAgents].[Chinese] AS [Chinese], 
+    [SupportAgents].[OnBoard Date] AS [OnBoard Date], 
+    [SupportAgents].[ForHCTracking] AS [ForHCTracking], 
+    [SupportAgents].[Sub-Func] AS [Sub-Func], 
+    [SupportAgents].[Project] AS [Project], 
+    [SupportAgents].[Team] AS [Team], 
+    [SupportAgents].[GoLive Date] AS [GoLive Date], 
+    [SupportAgents].[Phone Number] AS [Phone Number], 
+    [SupportAgents].[DeliverMSDN] AS [DeliverMSDN], 
+    [SupportAgents].[DeliverSO] AS [DeliverSO], 
+    [SupportAgents].[DeliverASPNET] AS [DeliverASPNET]
+    FROM [dbo].[SupportAgents] AS [SupportAgents]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MSDNInernalDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AskLeaf">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Alias" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OperationType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UsedTime" Type="Double" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ForumActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Alias" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OperationType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PublishTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReviewItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SupportAgentInProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgentID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupportAgentInTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgentID" Type="Int32" Nullable="false" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupportAgentScenario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgentID" Type="Int32" Nullable="false" />
+          <Property Name="ScenarioType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OperationType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelatedValue" Type="Double" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SupportAgent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Alias" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Chinese" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OnBoard_Date" Type="DateTime" Precision="3" />
+          <Property Name="ForHCTracking" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Func" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Project" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Team" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GoLive_Date" Type="DateTime" Precision="3" />
+          <Property Name="Phone_Number" Type="Double" />
+          <Property Name="DeliverMSDN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeliverSO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeliverASPNET" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DB1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AskLeaves" EntityType="Self.AskLeaf" />
+          <EntitySet Name="ForumActivities" EntityType="Self.ForumActivity" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ReviewItems" EntityType="Self.ReviewItem" />
+          <EntitySet Name="SupportAgentInProducts" EntityType="Self.SupportAgentInProduct" />
+          <EntitySet Name="SupportAgentInTeams" EntityType="Self.SupportAgentInTeam" />
+          <EntitySet Name="SupportAgentScenarios" EntityType="Self.SupportAgentScenario" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <EntitySet Name="SupportAgents" EntityType="Self.SupportAgent" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MSDNInernalDataBaseModelStoreContainer" CdmEntityContainer="DB1">
+          <EntitySetMapping Name="AskLeaves">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.AskLeaf">
+              <MappingFragment StoreEntitySet="AskLeaves">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="UsedTime" ColumnName="UsedTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForumActivities">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.ForumActivity">
+              <MappingFragment StoreEntitySet="ForumActivities">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReviewItems">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.ReviewItem">
+              <MappingFragment StoreEntitySet="ReviewItems">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupportAgentInProducts">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.SupportAgentInProduct">
+              <MappingFragment StoreEntitySet="SupportAgentInProducts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupportAgentInTeams">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.SupportAgentInTeam">
+              <MappingFragment StoreEntitySet="SupportAgentInTeams">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupportAgentScenarios">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.SupportAgentScenario">
+              <MappingFragment StoreEntitySet="SupportAgentScenarios">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="ScenarioType" ColumnName="ScenarioType" />
+                <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="RelatedValue" ColumnName="RelatedValue" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.Team">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupportAgents">
+            <EntityTypeMapping TypeName="MSDNInernalDataBaseModel.SupportAgent">
+              <MappingFragment StoreEntitySet="SupportAgents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Chinese" ColumnName="Chinese" />
+                <ScalarProperty Name="OnBoard_Date" ColumnName="OnBoard Date" />
+                <ScalarProperty Name="ForHCTracking" ColumnName="ForHCTracking" />
+                <ScalarProperty Name="Sub_Func" ColumnName="Sub-Func" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="GoLive_Date" ColumnName="GoLive Date" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="DeliverMSDN" ColumnName="DeliverMSDN" />
+                <ScalarProperty Name="DeliverSO" ColumnName="DeliverSO" />
+                <ScalarProperty Name="DeliverASPNET" ColumnName="DeliverASPNET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

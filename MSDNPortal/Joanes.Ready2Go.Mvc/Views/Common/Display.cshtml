@@ -1,0 +1,17 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="errorContainer">
+    <h1>@ViewBag.Result</h1>
+    <h2>@ViewBag.Message</h2>
+    <button class="btn btn-primary btn-large" onClick="document.location.href = 'index-2.html';">
+        Back to main
+    </button> <button class="btn btn-large" onClick="document.location.href='@ViewBag.ReturnValue'">Back to previous </button>
+</div>
+

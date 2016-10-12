@@ -1,0 +1,163 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Ahead.Data.TeamMember[] CloudMembers = ViewBag.Cloud as Ahead.Data.TeamMember[];
+
+    Ahead.Data.TeamMember[] ICMembers = ViewBag.IC as Ahead.Data.TeamMember[];
+
+    Ahead.Data.TeamMember[] DevMembers = ViewBag.Dev as Ahead.Data.TeamMember[];
+
+    Ahead.Data.TeamMember[] MobileMembers = ViewBag.Mobile as Ahead.Data.TeamMember[];
+
+    Ahead.Data.TeamMember[] OtherMembers = ViewBag.Other as Ahead.Data.TeamMember[];
+}
+<div class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-play-circle"></i>
+                        </span>
+                        <h5>Cloud Team Members</h5>
+
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="span12 btn-icon-pg">
+                                <ul>
+                                    @foreach (var cloud in CloudMembers)
+                                    {
+                                        <li><a href="/Leave/New/@cloud.Alias"><i class="icon-user"></i> @cloud.ChineseName</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-play-circle"></i>
+                        </span>
+                        <h5>Installation & Configuration Team Members</h5>
+
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="span12 btn-icon-pg">
+                                <ul>
+                                    @foreach (var ic in ICMembers)
+                                    {
+                                        <li><a href="/Leave/New/@ic.Alias"><i class="icon-user"></i> @ic.ChineseName</a></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-play-circle"></i>
+                        </span>
+                        <h5>Mobile Team Members</h5>
+
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="span12 btn-icon-pg">
+                                <ul>
+                                    @foreach (var mobile in MobileMembers)
+                                    {
+                                        <li><a href="/Leave/New/@mobile.Alias">><i class="icon-user"></i> @mobile.ChineseName</a></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-play-circle"></i>
+                        </span>
+                        <h5>Fundamental Developing Team Members</h5>
+
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="span12 btn-icon-pg">
+                                <ul>
+                                    @foreach (var dev in DevMembers)
+                                    {
+                                        <li><a href="/Leave/New/@dev.Alias"><i class="icon-user"></i> @dev.ChineseName</a></li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon">
+                            <i class="icon-play-circle"></i>
+                        </span>
+                        <h5>Other Team Members</h5>
+
+                    </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                            <div class="span12 btn-icon-pg">
+                                <ul>
+                                    @foreach (var other in OtherMembers)
+                                    {
+                                        <li><a href="/Leave/New/@other.Alias"><i class="icon-user"></i> @other.ChineseName</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

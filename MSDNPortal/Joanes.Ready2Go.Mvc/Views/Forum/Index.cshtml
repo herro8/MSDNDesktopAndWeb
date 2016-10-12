@@ -1,0 +1,241 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+
+@{
+    ViewBag.Title = "Daily Post Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var cloudmember = ViewBag.Cloud as Ahead.Common.ViewModeForumActivity[];
+
+    var mobilemember = ViewBag.Mobile as Ahead.Common.ViewModeForumActivity[];
+
+    var icmember = ViewBag.IC as Ahead.Common.ViewModeForumActivity[];
+
+    var devmember = ViewBag.Dev as Ahead.Common.ViewModeForumActivity[];
+
+    var sqlmember = ViewBag.SQL as Ahead.Common.ViewModeForumActivity[];
+
+    var activity = ViewBag.Activities as Ahead.Data.ForumActivity[];
+
+    var count = activity.Count();
+}
+
+
+<div class="container-fluid">
+    
+   
+
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-eye-open"></i>
+                    </span>
+                    <h5>Cloud</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reply</th>
+                                <th>Propose</th>
+                                <th>Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                                @foreach (var act in cloudmember)
+                                {
+                                    <tr>
+                                        <td><a href="/Forum/Detail?id=@act.Alias" target="_blank">@act.DisplayName</a>  </td>
+                                        <td>@act.RepliedToAForumsThread</td>
+                                        <td>@act.MarkedAProposedAnswer</td>
+                                        <td>@act.MarkedAnAnswer</td>
+                                    </tr>
+                                }
+
+                                  
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      
+
+        <div class="span4">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-eye-open"></i>
+                    </span>
+                    <h5>Mobile</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reply</th>
+                                <th>Propose</th>
+                                <th>Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                                @foreach (var act in mobilemember)
+                                {
+                                    <tr>
+                                        <td><a href="/Forum/Detail?id=@act.Alias" target="_blank">@act.DisplayName</a>  </td>
+                                        <td>@act.RepliedToAForumsThread</td>
+                                        <td>@act.MarkedAProposedAnswer</td>
+                                        <td>@act.MarkedAnAnswer</td>
+                                    </tr>
+                                }
+                                  
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        <div class="span4">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-eye-open"></i>
+                    </span>
+                    <h5>Installation & Configuration</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reply</th>
+                                <th>Propose</th>
+                                <th>Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                                @foreach (var act in icmember)
+                                {
+                                    <tr>
+                                        <td><a href="/Forum/Detail?id=@act.Alias" target="_blank">@act.DisplayName</a>  </td>
+                                        <td>@act.RepliedToAForumsThread</td>
+                                        <td>@act.MarkedAProposedAnswer</td>
+                                        <td>@act.MarkedAnAnswer</td>
+                                    </tr>
+                                }
+                                  
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-eye-open"></i>
+                    </span>
+                    <h5>Fundamental Developing</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reply</th>
+                                <th>Propose</th>
+                                <th>Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                                @foreach (var act in devmember)
+                                {
+                                    <tr>
+                                        <td><a href="/Forum/Detail?id=@act.Alias" target="_blank">@act.DisplayName</a>  </td>
+                                        <td>@act.RepliedToAForumsThread</td>
+                                        <td>@act.MarkedAProposedAnswer</td>
+                                        <td>@act.MarkedAnAnswer</td>
+                                    </tr>
+                                }
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="span4">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-eye-open"></i>
+                    </span>
+                    <h5>SQL</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reply</th>
+                                <th>Propose</th>
+                                <th>Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var act in sqlmember)
+                            {
+                                <tr>
+                                    <td><a href="/Forum/Detail?id=@act.Alias" target="_blank">@act.DisplayName</a>  </td>
+                                    <td>@act.RepliedToAForumsThread</td>
+                                    <td>@act.MarkedAProposedAnswer</td>
+                                    <td>@act.MarkedAnAnswer</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon"> <i class="icon-hand-right"></i> </span>
+                    <h5>Detailed Activities/Team Daily Target: 251/Total Volume: @count</h5>
+                </div>
+                <div class="widget-content">
+                    <ul>
+                        @foreach (var act in activity)
+                        {
+
+                            <li>@Html.Raw(act.Alias+"&nbsp;&nbsp;"+act.Comment)</li>
+                        }
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

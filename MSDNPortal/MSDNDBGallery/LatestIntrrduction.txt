@@ -1,0 +1,1 @@
+﻿DO NOT want to waste much time on code first migration, so use database first instead
