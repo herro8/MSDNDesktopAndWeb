@@ -229,6 +229,7 @@
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaveController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Data\CacheManager.cs" />
     <Compile Include="Data\ForumRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
@@ -404,6 +405,7 @@
     <None Include="Properties\PublishProfiles\MSDNWebSitePublish.pubxml" />
     <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Forum\Detail.cshtml" />
+    <Content Include="Views\Review\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

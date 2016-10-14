@@ -35,9 +35,10 @@ namespace Ahead.Controllers
         {
             string msg = ID;
             var temp = _forum_activity_repository.FindRecentTwoMonthCase();
-            var data = temp.Where(w => w.Alias == ID).Select(s => new ViewModeForumActivityDetail() { Alias = s.Alias, Comment = s.Comment, SubmitTime = s.PublishTime, IsReply = s.OperationType.StartsWith("Replied to") }).OrderByDescending(o=>o.SubmitTime).ToArray();
-            ViewBag.Activity = data;
-            ViewBag.Count = data.Count();
+            var data = temp.Where(w => w.Alias == ID).Select(s => new ViewModeForumActivityDetail() { ActivityID = s.ID, Alias = s.Alias, Comment = s.Comment, SubmitTime = s.PublishTime, IsReply = s.OperationType.StartsWith("Replied to") }).OrderByDescending(o => o.SubmitTime);
+            ViewBag.Activity = data.Where(w => w.IsReply == true).ToArray();
+            ViewBag.ProposeAndMark = data.Where(w => w.IsReply == false).ToArray();
+            ViewBag.Count = data.Where(w => w.IsReply == true).Count();
 
             return View();
         }

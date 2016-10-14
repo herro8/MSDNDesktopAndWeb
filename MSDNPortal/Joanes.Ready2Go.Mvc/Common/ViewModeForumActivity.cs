@@ -26,6 +26,9 @@ namespace Ahead.Common
 
     public class ViewModeForumActivityDetail
     {
+
+        public int ActivityID { get; set; }
+
         public string Alias { get; set; }
 
         public string Comment { get; set; }
